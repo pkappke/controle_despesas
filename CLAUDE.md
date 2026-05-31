@@ -2,6 +2,28 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git workflow
+
+After every change, commit and push to `https://github.com/pkappke/controle_despesas`. Commit messages must include a detailed explanation of **what** changed and **why** — not just a one-liner. Use this structure:
+
+```
+Título curto e descritivo (máx. 72 chars)
+
+- O que foi alterado e em qual arquivo
+- Por que a mudança foi necessária
+- Qualquer impacto colateral ou comportamento que mudou
+```
+
+Example of a good commit message:
+```
+Corrige cálculo de saldo semanal em api/transacoes.php
+
+- O campo `saldo` estava sendo calculado como string concatenação em vez
+  de subtração numérica quando ambos receitas e despesas eram zero.
+- Adicionado cast explícito para float antes da subtração.
+- Sem impacto nas views; apenas o valor retornado no JSON foi corrigido.
+```
+
 ## Environment
 
 - **Server:** WAMP (Windows) — Apache + PHP 8+ + MySQL 8.4
